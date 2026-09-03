@@ -11,8 +11,7 @@ public class StudentResultAnalyzer {
         // Marks
         System.out.print("Enter marks in Subject 1: ");
         int mark1 = sc.nextInt();
-
-        System.out.print("Enter marks in Subject 2: ");
+      System.out.print("Enter marks in Subject 2: ");
         int mark2 = sc.nextInt();
 
         System.out.print("Enter marks in Subject 3: ");
