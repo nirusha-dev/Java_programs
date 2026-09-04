@@ -15,5 +15,7 @@ public class FirstNonRepeated {
                 break;
             }
         }
+        sc.close();
+
     }
 }
