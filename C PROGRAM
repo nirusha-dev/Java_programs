@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+struct Student
+{
+    int id;
+    char name[50];
+    float marks[5], avg;
+    char grade;
+};
+
+int main()
+{
+    struct Student s[5], *p;
+    int i, j;
+    float total;
+
+    p = s;
+
+    for(i = 0; i < 5; i++)
+    {
+        printf("Enter Student ID: ");
+        scanf("%d", &p[i].id);
+
+        printf("Enter Name: ");
+        scanf("%s", p[i].name);
+
+        total = 0;
+        printf("Enter marks for 5 subjects:\n");
+
+        for(j = 0; j < 5; j++)
+        {
+            printf("Subject %d: ", j+1);
+            scanf("%f", &p[i].marks[j]);
+            total += p[i].marks[j];
+        }
+
+        p[i].avg = total / 5;
+
+        if(p[i].avg >= 90)
+            p[i].grade = 'A';
+        else if(p[i].avg >= 80)
+            p[i].grade = 'B';
+        else if(p[i].avg >= 70)
+            p[i].grade = 'C';
+        else if(p[i].avg >= 60)
+            p[i].grade = 'D';
+        else
+            p[i].grade = 'F';
+    }
+
+    printf("\nStudent Information:\n");
+
+    for(i = 0; i < 5; i++)
+    {
+        printf("\nStudent ID: %d\n", p[i].id);
+        printf("Name: %s\n", p[i].name);
+        printf("Average Marks: %.2f\n", p[i].avg);
+        printf("Grade: %c\n", p[i].grade);
+    }
+
+    return 0;
+}
